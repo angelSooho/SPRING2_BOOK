@@ -1,0 +1,32 @@
+server:
+  port: 8080 # 서버 포트(기본값은 8080)
+spring:
+  profiles:
+    active: dev # 기본적으로 dev 환경임을 명시
+  thymeleaf:
+    cache: false # 타임리프 캐시 끄기
+    prefix: file:src/main/resources/templates/ # 타임리프 캐시 끄기(이 설정을 해야 꺼짐)
+    mode: HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    enabled: true
+    suffix: .html
+    template-resolver-order: 1
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/basic2__dev?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=UTC
+    username: lsh
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create # DB 테이블 자동생성(엔티티 클래스만 만들면 됨)
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
