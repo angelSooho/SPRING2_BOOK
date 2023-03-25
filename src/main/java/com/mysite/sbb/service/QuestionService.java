@@ -57,23 +57,23 @@ public class QuestionService {
         sorts.add(Sort.Order.desc("id"));
         Pageable pageable = PageRequest.of(page, 10, Sort.by(sorts));
         Specification<Question> spec = search(kw);
-        return this.questionRepository.findAllByKeyword(kw, pageable);
+        return questionRepository.findAllByKeyword(kw, pageable);
     }
 
     public void modify(Question question, String subject, String content) {
         question.setSubject(subject);
         question.setContent(content);
         question.setModifyDate(LocalDateTime.now());
-        this.questionRepository.save(question);
+        questionRepository.save(question);
     }
 
     public void delete(Question question) {
-        this.questionRepository.delete(question);
+        questionRepository.delete(question);
     }
 
     public void vote(Question question, SiteUser siteUser) {
         question.getVoter().add(siteUser);
-        this.questionRepository.save(question);
+        questionRepository.save(question);
     }
 
     private Specification<Question> search(String kw) {
