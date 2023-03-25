@@ -7,6 +7,7 @@ import jakarta.validation.Valid;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,11 +50,21 @@ public class UserController {
             return "signup_form";
         }
 
-        return "redirect:/";
+        return "redirect:/question/list";
     }
 
     @GetMapping("/login")
     public String login() {
         return "login_form";
+    }
+
+    @PostMapping("/loginAccess")
+    public String loginAccess() {
+        return "redirect:/question/list";
+    }
+
+    @GetMapping("/logout")
+    public String logout() {
+        return "redirect:/question/list";
     }
 }
