@@ -32,7 +32,7 @@ public class QuestionController {
 
     @PostConstruct
     public void init() {
-        for (int idx = 0; idx < 300; idx++) {
+        for (int idx = 0; idx < 50; idx++) {
             Question question = new Question("스프링부트 모델 질문입니다.",
                     "id는 자동으로 생성되나요?", LocalDateTime.now());
             questionService.save(question);
@@ -115,7 +115,7 @@ public class QuestionController {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "삭제권한이 없습니다.");
         }
         this.questionService.delete(question);
-        return "redirect:/";
+        return "redirect:/question/list";
     }
 
     @PreAuthorize("isAuthenticated()")
