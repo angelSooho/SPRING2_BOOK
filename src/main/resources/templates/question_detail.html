@@ -13,10 +13,10 @@
                     <div th:text="${#temporals.format(question.modifyDate, 'yyyy-MM-dd HH:mm')}"></div>
                 </div>
                 <div class="badge bg-light text-dark p-2 text-start">
-                    <div class="mb-2">
+                    <div class="mb-2">created at
                         <span th:if="${question.author != null}" th:text="${question.author.username}"></span>
                     </div>
-                    <div th:text="${#temporals.format(question.create_date, 'yyyy-MM-dd HH:mm')}"></div>
+                    <div th:text=" ${#temporals.format(question.create_date, 'yyyy-MM-dd HH:mm')}"></div>
                 </div>
             </div>
             <div class="my-3">
