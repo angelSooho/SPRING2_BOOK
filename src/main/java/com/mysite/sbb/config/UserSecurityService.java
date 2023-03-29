@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import com.mysite.sbb.model.SiteUser;
-import com.mysite.sbb.repository.UserRepository;
+import com.mysite.sbb.security.SiteUser;
+import com.mysite.sbb.security.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;

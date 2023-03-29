@@ -1,7 +1,4 @@
-package com.mysite.sbb.Builder;
-
-import com.mysite.sbb.Builder.Member;
-import com.mysite.sbb.Builder.MemberBuilder;
+package com.mysite.sbb.Something.Builder;
 
 public class BuilderTest {
 
