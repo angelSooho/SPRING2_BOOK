@@ -1,11 +1,8 @@
-package com.mysite.sbb.controller;
+package com.mysite.sbb.question;
 
-import com.mysite.sbb.AnswerForm;
-import com.mysite.sbb.QuestionForm;
-import com.mysite.sbb.model.Question;
-import com.mysite.sbb.model.SiteUser;
-import com.mysite.sbb.service.QuestionService;
-import com.mysite.sbb.service.UserService;
+import com.mysite.sbb.answer.AnswerForm;
+import com.mysite.sbb.security.SiteUser;
+import com.mysite.sbb.security.UserService;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -20,7 +17,6 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.security.Principal;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -32,7 +28,7 @@ public class QuestionController {
 
     @PostConstruct
     public void init() {
-        for (int idx = 0; idx < 50; idx++) {
+        for (int idx = 0; idx < 20; idx++) {
             Question question = new Question("스프링부트 모델 질문입니다.",
                     "id는 자동으로 생성되나요?", LocalDateTime.now());
             questionService.save(question);

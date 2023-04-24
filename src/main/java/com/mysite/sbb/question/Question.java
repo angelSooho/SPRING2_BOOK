@@ -1,5 +1,8 @@
-package com.mysite.sbb.model;
+package com.mysite.sbb.question;
 
+import com.mysite.sbb.answer.model.Answer;
+import com.mysite.sbb.base.BaseTimeEntity;
+import com.mysite.sbb.security.SiteUser;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -7,23 +10,26 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
-public class Answer extends BaseTimeEntity {
+public class Question extends BaseTimeEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "answer_id")
-    private Long answer_id;
+    private Long id;
+
+    @Column(length = 200)
+    private String subject;
 
     @Column(columnDefinition = "TEXT")
     private String content;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Question question;
+    @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
+    private List<Answer> answerList;
 
     @ManyToOne
     private SiteUser author;
@@ -31,9 +37,10 @@ public class Answer extends BaseTimeEntity {
     @ManyToMany
     Set<SiteUser> voter;
 
-    public Answer(String content, Question question, LocalDateTime localDateTime) {
+    public Question(String subject, String content, LocalDateTime localDateTime) {
+        this.subject = subject;
         this.content = content;
-        this.question = question;
         this.setCreate_date(localDateTime);
     }
 }
+

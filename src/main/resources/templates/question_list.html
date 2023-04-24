@@ -26,10 +26,9 @@
                 <td th:text="${paging.getTotalElements - (paging.number * paging.size) - loop.index}"></td>
                 <td class="text-start">
                     <a th:href="@{|/question/detail/${question.id}|}" th:text="${question.subject}"></a>
-                    <span class="text-danger small ms-2"
-                          th:if="${#lists.size(question.answerList) > 0}"
+                    <span class="text-danger small ms-2" th:if="${#lists.size(question.answerList) > 0}"
                           th:text="${#lists.size(question.answerList)}">
-                    </span>
+			        </span>
                 </td>
                 <td><span th:if="${question.author != null}" th:text="${question.author.username}"></span></td>
                 <td th:text="${#temporals.format(question.create_date, 'yyyy-MM-dd HH:mm')}"></td>

@@ -1,4 +1,4 @@
-package com.mysite.sbb.SingleTon;
+package com.mysite.sbb.Something.SingleTon;
 
 public class Car {
 

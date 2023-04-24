@@ -1,13 +1,10 @@
-package com.mysite.sbb.controller;
+package com.mysite.sbb.security;
 
-import com.mysite.sbb.UserCreateForm;
-import com.mysite.sbb.service.UserService;
 import jakarta.validation.Valid;
 
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -58,8 +55,8 @@ public class UserController {
         return "login_form";
     }
 
-    @PostMapping("/loginAccess")
-    public String loginAccess() {
+    @PostMapping("/login")
+    public String login(@Valid UserCreateForm userCreateForm) {
         return "redirect:/question/list";
     }
 

@@ -1,4 +1,4 @@
-package com.mysite.sbb.Builder;
+package com.mysite.sbb.Something.Builder;
 
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotNull;

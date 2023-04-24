@@ -1,7 +1,4 @@
-package com.mysite.sbb.Builder;
-
-import com.mysite.sbb.Builder.Member;
-import com.mysite.sbb.Builder.MemberBuilder;
+package com.mysite.sbb.Something.Builder;
 
 public class BuilderTest {
 
@@ -19,4 +16,6 @@ public class BuilderTest {
             .address("서울시")
             .build();
     // 이슈
+    // 이슈 다시 확인
+    // 이슈 커밋
 }

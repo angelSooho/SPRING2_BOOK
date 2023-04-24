@@ -1,12 +1,12 @@
-package com.mysite.sbb.controller;
+package com.mysite.sbb.answer.controller;
 
-import com.mysite.sbb.AnswerForm;
-import com.mysite.sbb.model.Answer;
-import com.mysite.sbb.model.Question;
-import com.mysite.sbb.model.SiteUser;
-import com.mysite.sbb.service.AnswerService;
-import com.mysite.sbb.service.QuestionService;
-import com.mysite.sbb.service.UserService;
+import com.mysite.sbb.answer.AnswerForm;
+import com.mysite.sbb.answer.model.Answer;
+import com.mysite.sbb.question.Question;
+import com.mysite.sbb.security.SiteUser;
+import com.mysite.sbb.answer.service.AnswerService;
+import com.mysite.sbb.question.QuestionService;
+import com.mysite.sbb.security.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;

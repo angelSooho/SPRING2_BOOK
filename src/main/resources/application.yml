@@ -1,5 +1,3 @@
-server:
-  port: 8080 # 서버 포트(기본값은 8080)
 spring:
   profiles:
     active: dev # 기본적으로 dev 환경임을 명시
@@ -19,6 +17,7 @@ spring:
     restart:
       enabled: true
   datasource:
+    url: jdbc:h2:tcp://localhost/~/db/sbb
     username: sa
     password:
     driver-class-name: org.h2.Driver

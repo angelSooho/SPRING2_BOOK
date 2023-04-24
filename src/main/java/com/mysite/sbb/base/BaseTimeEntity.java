@@ -1,4 +1,4 @@
-package com.mysite.sbb.model;
+package com.mysite.sbb.base;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;

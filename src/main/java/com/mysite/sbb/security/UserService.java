@@ -1,9 +1,8 @@
-package com.mysite.sbb.service;
+package com.mysite.sbb.security;
 
 import com.mysite.sbb.exception.DataNotFoundException;
-import com.mysite.sbb.model.SiteUser;
-import com.mysite.sbb.repository.UserRepository;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import com.mysite.sbb.security.SiteUser;
+import com.mysite.sbb.security.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

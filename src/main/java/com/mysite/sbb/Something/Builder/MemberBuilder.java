@@ -1,4 +1,4 @@
-package com.mysite.sbb.Builder;
+package com.mysite.sbb.Something.Builder;
 
 public class MemberBuilder {
 
